@@ -69,8 +69,15 @@ python manage.py startapp <appName>
 	207. type out path pattern
 	307. type out path pattern in web project urls.py file
 	407. workflow:: add views for app-> update path patterns for app -> update webapp path patterns
-
-
+8. Creating Templates in an app directory
+###### instead of creating html for all views, we create <templates> sub-directory
+###### inside of templates, new subdirectory in the name of our app (although redundant, makes things clear)
+###### <whateverAppName> -> templates -> <whatverAppName> -> template.html
+	008. views.py -> render your html pages based on request
+	108. templates-> blog -> <filename>.html we can have base.html for repeat code
+	208. import bootstrap and custom.css for every item post
+	308. update routes based on what we click on navbar
+	408. also created dummy data as 'context'
 
 
 
