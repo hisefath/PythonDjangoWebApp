@@ -78,7 +78,13 @@ python manage.py startapp <appName>
 	208. import bootstrap and custom.css for every item post
 	308. update routes based on what we click on navbar
 	408. also created dummy data as 'context'
-
-
-
-
+9. To create a super user for the Administrator page, run
+```
+ptyhon manage.py makemigrations
+python manage.py runserver
+python manage.py createsuperuser
+```
+	008. you can now login, in /admin page
+	108. click users to see your users
+	208. you can edit info, check current users/groups/etc. 
+	308. django doesnt store your actual passwords, it automatically hashes them
