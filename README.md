@@ -64,11 +64,11 @@ python manage.py startapp <appName>
 │   └── wsgi.py
 └── manage.py
 ```
-	007. import modules such as: (inViews:[httpReponse, Render]) create a view
-	107. make urls.py file in app and include (inUrls:[include])
-	207. type out path pattern
-	307. type out path pattern in web project urls.py file
-	407. workflow:: add views for app-> update path patterns for app -> update webapp path patterns
+	a. import modules such as: (inViews:[httpReponse, Render]) create a view
+	b. make urls.py file in app and include (inUrls:[include])
+	c. type out path pattern
+	d. type out path pattern in web project urls.py file
+	e. workflow:: add views for app-> update path patterns for app -> update webapp path patterns
 8. Creating Templates in an app directory
 ###### instead of creating html for all views, we create <templates> sub-directory
 ###### inside of templates, new subdirectory in the name of our app (although redundant, makes things clear)
@@ -84,28 +84,28 @@ ptyhon manage.py makemigrations
 python manage.py runserver
 python manage.py createsuperuser
 ```
-	009. you can now login, in /admin page
-	109. click users to see your users
-	209. you can edit info, check current users/groups/etc. 
-	309. django doesnt store your actual passwords, it automatically hashes them
+	a. you can now login, in /admin page
+	b. click users to see your users
+	c. you can edit info, check current users/groups/etc. 
+	d. django doesnt store your actual passwords, it automatically hashes them
 10. Create models class in your models.py file in your app directory
-	010. run python manage.py makemigrations
-	110. this creates a 0001_intial.py file under migrations sub-directory
-	210. to create this table in your database, run 
+	a. run python manage.py makemigrations
+	b. this creates a 0001_intial.py file under migrations sub-directory
+	c. to create this table in your database, run 
 	```
 	python manage.py sqlmigrate blog 0001
 	python manage.py sqlmigrate <appName> <migrationNumber>
 	``` 
-	310. After you create model class and create your table, run the migrate command 
+	d. After you create model class and create your table, run the migrate command 
 	```
 	python manage.py migrate
 	```
-	410. Migrations are so useful bc they allow us to make changes to our databses even after its created and has existing data in the database
-	510. if you wanted to query the database using these models, you can access the shell by running
+	e. Migrations are so useful bc they allow us to make changes to our databses even after its created and has existing data in the database
+	f. if you wanted to query the database using these models, you can access the shell by running
 	```
 	python manage.py shell
 	```
-	610. example commands in the shell
+	g. example commands in the shell
 	```
 	from blog.models import Post
 	from django.contrib.auth.models import User
@@ -137,7 +137,7 @@ python manage.py createsuperuser
 	user.post_set.all() 
 	user.post_set.create(title = 'textbook 3', details = 'textbook for sale', price=120) //automatically saves
 	```
-	710. go to app->views.py and replace dummy data with our post model
+	h. go to app->views.py and replace dummy data with our post model
 		- from .models import Post 
 		- context -> posts -> Post.objects.all() 
 		- to see the Post datatable in your /admin page, register it to your admin.py file in your app directory
