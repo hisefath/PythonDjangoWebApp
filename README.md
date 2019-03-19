@@ -84,7 +84,61 @@ ptyhon manage.py makemigrations
 python manage.py runserver
 python manage.py createsuperuser
 ```
-	008. you can now login, in /admin page
-	108. click users to see your users
-	208. you can edit info, check current users/groups/etc. 
-	308. django doesnt store your actual passwords, it automatically hashes them
+	009. you can now login, in /admin page
+	109. click users to see your users
+	209. you can edit info, check current users/groups/etc. 
+	309. django doesnt store your actual passwords, it automatically hashes them
+10. Create models class in your models.py file in your app directory
+	010. run python manage.py makemigrations
+	110. this creates a 0001_intial.py file under migrations sub-directory
+	210. to create this table in your database, run 
+	```
+	python manage.py sqlmigrate blog 0001
+	python manage.py sqlmigrate <appName> <migrationNumber>
+	``` 
+	310. After you create model class and create your table, run the migrate command 
+	```
+	python manage.py migrate
+	```
+	410. Migrations are so useful bc they allow us to make changes to our databses even after its created and has existing data in the database
+	510. if you wanted to query the database using these models, you can access the shell by running
+	```
+	python manage.py shell
+	```
+	610. example commands in the shell
+	```
+	from blog.models import Post
+	from django.contrib.auth.models import User
+	//query users table
+	User.objects.all()
+	User.objects.first()
+	User.objects.filter(username='mastershefu') //or any other attribute
+	//capture user object in variable
+	user = User.objects.filter(username='mastershefu')
+	//now you can take the variable and see all attributes of that user object
+	user.id
+	user.pk
+	user = User.objects.get(id=1)
+	//query posts 
+	Post.objects.all()
+	post_1 = Post(title = 'textbook 1', details = 'textbook for sale', price=40, author=user) //user must be declared beforehand
+	//save your post object to your database
+	post_1.save()
+	//check if it saved by running
+	Post.objects.all()
+	//in order to get your post objects to show up in a more descriptive form, use the dunder str method (dunder means double underscore)
+	post = Post.objects.first() 
+	post.details
+	post.price
+	post.author.email
+	//query all posts made by a specific user
+	.modelname_set
+	user.post_set
+	user.post_set.all() 
+	user.post_set.create(title = 'textbook 3', details = 'textbook for sale', price=120) //automatically saves
+	```
+	710. go to app->views.py and replace dummy data with our post model
+		- from .models import Post 
+		- context -> posts -> Post.objects.all() 
+		- to see the Post datatable in your /admin page, register it to your admin.py file in your app directory
+		- import it again, then do admin.site.register(Post)
