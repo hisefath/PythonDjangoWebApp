@@ -163,4 +163,10 @@ python manage.py startapp users
 	pip install django-crispy-forms
 	```
 		- to use cripsy, list it in installed apps, dictacte which css framework youre using (both in settings.py file) then update your register.html file
-	
+12. We now have to create a login and logout system
+	a. update urls.py with auth_views login & logout
+	b. create login logout html files
+	c. create redirect links after form submissions
+	d. you can update your navbar for visual reinforcement of log in and log out actions
+	e. workflow review: views.py in app -> create  function to render page -> update project's urls.py file, create the html in template/appname directory
+	f. you can also restrict certain urls by making it so that we require an authentication/login before we access certain pages (for this you have to import decorators in your views.py file and update the link ur want redirection to in settings.py)
