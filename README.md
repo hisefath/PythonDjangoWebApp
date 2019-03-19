@@ -142,3 +142,25 @@ python manage.py createsuperuser
 		- context -> posts -> Post.objects.all() 
 		- to see the Post datatable in your /admin page, register it to your admin.py file in your app directory
 		- import it again, then do admin.site.register(Post)
+
+11. We have to create user registration, and we do this in a new app
+```
+python manage.py startapp users
+```
+	a. add to installed apps in settings.py file
+	b. add function to views to render register user page
+	c. add templates/users sub directory for html files
+	d. create html file for view function
+	e. update urls.py file 
+	f. go back to views.py file, now if your form as a POST method, 
+	your function should take the request and post it to the database.
+	g. based on if the forms valid or not, we will both display success messages for the user and/or redirect them appropriately
+	h. if you want messages to work, climb through your hierarchy and code for the success messages in your base.html template
+	i. now that that works, you can save it to your database by adding form.save() in your register function in views.py
+	j. To customize what fields you want users to register with, create new forms.py file in your users app directory, then import and use the class in made in views.py
+	k. I'm using djangos "crispy-forms" to get a better styling
+	```
+	pip install django-crispy-forms
+	```
+		- to use cripsy, list it in installed apps, dictacte which css framework youre using (both in settings.py file) then update your register.html file
+	
