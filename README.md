@@ -170,3 +170,61 @@ python manage.py startapp users
 	d. you can update your navbar for visual reinforcement of log in and log out actions
 	e. workflow review: views.py in app -> create  function to render page -> update project's urls.py file, create the html in template/appname directory
 	f. you can also restrict certain urls by making it so that we require an authentication/login before we access certain pages (for this you have to import decorators in your views.py file and update the link ur want redirection to in settings.py)
+
+## How my file tree looks now
+.
+├── README.md
+├── blog
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   ├── models.py
+│   ├── static
+│   │   └── blog
+│   │       └── main.css
+│   ├── templates
+│   │   └── blog
+│   │       ├── about.html
+│   │       ├── base.html
+│   │       └── home.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── db.sqlite3
+├── djangoProject
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+└── users
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── forms.py
+    ├── migrations
+    │   ├── __init__.py
+    ├── models.py
+    ├── templates
+    │   └── users
+    │       ├── login.html
+    │       ├── logout.html
+    │       ├── profile.html
+    │       └── register.html
+    ├── tests.py
+    └── views.py
+
+13. Creating user profiles and creating one to one relationship between users and profiles
+	a. create model in models.py fiel in user app sub directory
+	b. ```pip install Pillow```
+	c. ```python manage.py makemigrations```
+	d. ```python manage.py migrate```
+	e. register profile model in admin.py
+	f. run django shell 
+	```python manage.py shell```
+	g.  
+
+
