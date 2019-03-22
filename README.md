@@ -269,3 +269,94 @@ python manage.py createsuperuser
 	- password reset (allow app password access from gmail, make private env vars)
 
 
+## How my file tree looks in the end
+```
+.
+├── README.md
+├── blog
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── admin.cpython-37.pyc
+│   │   ├── apps.cpython-37.pyc
+│   │   ├── models.cpython-37.pyc
+│   │   ├── urls.cpython-37.pyc
+│   │   └── views.cpython-37.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-37.pyc
+│   │       └── __init__.cpython-37.pyc
+│   ├── models.py
+│   ├── static
+│   │   └── blog
+│   │       └── main.css
+│   ├── templates
+│   │   └── blog
+│   │       ├── about.html
+│   │       ├── base.html
+│   │       ├── home.html
+│   │       ├── post_confirm_delete.html
+│   │       ├── post_detail.html
+│   │       ├── post_form.html
+│   │       └── user_posts.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── db.sqlite3
+├── djangoProject
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-37.pyc
+│   │   ├── settings.cpython-37.pyc
+│   │   ├── urls.cpython-37.pyc
+│   │   └── wsgi.cpython-37.pyc
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── media
+│   ├── default.jpg
+│   └── profile_pics
+│       ├── danny.png
+│       ├── pikachu.jpg
+│       └── sefu_FeEuKhk.jpg
+└── users
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-37.pyc
+    │   ├── admin.cpython-37.pyc
+    │   ├── apps.cpython-37.pyc
+    │   ├── forms.cpython-37.pyc
+    │   ├── models.cpython-37.pyc
+    │   ├── signals.cpython-37.pyc
+    │   └── views.cpython-37.pyc
+    ├── admin.py
+    ├── apps.py
+    ├── forms.py
+    ├── migrations
+    │   ├── 0001_initial.py
+    │   ├── __init__.py
+    │   └── __pycache__
+    │       ├── 0001_initial.cpython-37.pyc
+    │       └── __init__.cpython-37.pyc
+    ├── models.py
+    ├── signals.py
+    ├── templates
+    │   └── users
+    │       ├── login.html
+    │       ├── logout.html
+    │       ├── password_reset.html
+    │       ├── password_reset_complete.html
+    │       ├── password_reset_confirm.html
+    │       ├── password_reset_done.html
+    │       ├── profile.html
+    │       └── register.html
+    ├── tests.py
+    └── views.py
+
+18 directories, 67 files
+```
