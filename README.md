@@ -244,6 +244,28 @@ python manage.py createsuperuser
 	- update urls in blog dir
 	- Do same for detail view to view indivisual posts
 	- Now implement CRUD by using create, update, and delete views from djano documentation
-	
+
+15. Implementing Pagination 
+	- run the following:
+	```
+	python manage.py shell
+	from django.core.paginator import Paginator
+	posts = ['1', '2', '3', '4', '5']
+	p = Paginator(posts, 2)
+	p.num_pages
+	for page in p.page_range:
+		print(page)
+	p1 = p.page(1)
+	p1.number
+	p1.object_list
+	p1.has_previous()
+	p1.has_next()
+	p1.next_page_number()
+	```
+	- Now we want to use that in blog -> views -> add paginator variable -> edit html
+
+16. Additional Functionality
+	- user post list view
+	- password reset (allow app password access from gmail, make private env vars)
 
 
