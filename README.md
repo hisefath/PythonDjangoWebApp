@@ -232,5 +232,9 @@ python manage.py createsuperuser
 	```
 	g. We have to direct which directory the images will be stored when we upload new pictures for every user, we do this in the settings.py file
 	h. make a signal.py file so anytime we create a user, a profile is generated, and will be able to save the profile information 
-
+	h. Creating User/profile update forms
+	i. Make sure to update views.py file accordingly to make sure the new forms work as POST requests, and save appropriately. 
+	j. Resize photo on upload by going to models.py file and overwriting save method
+	k. Add profile image next to users post using home.html file
+	
 
