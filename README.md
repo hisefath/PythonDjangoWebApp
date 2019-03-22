@@ -64,48 +64,49 @@ python manage.py startapp <appName>
 │   └── wsgi.py
 └── manage.py
 ```
-	a. import modules such as: (inViews:[httpReponse, Render]) create a view
-	b. make urls.py file in app and include (inUrls:[include])
-	c. type out path pattern
-	d. type out path pattern in web project urls.py file
-	e. workflow:: add views for app-> update path patterns for app -> update webapp path patterns
+	- import modules such as: (inViews:[httpReponse, Render]) create a view
+	- make urls.py file in app and include (inUrls:[include])
+	- type out path pattern
+	- type out path pattern in web project urls.py file
+	- workflow:: add views for app-> update path patterns for app -> update webapp path patterns
+	
 8. Creating Templates in an app directory
 ###### instead of creating html for all views, we create <templates> sub-directory
 ###### inside of templates, new subdirectory in the name of our app (although redundant, makes things clear)
 ###### <whateverAppName> -> templates -> <whatverAppName> -> template.html
-	a. views.py -> render your html pages based on request
-	b. templates-> blog -> <filename>.html we can have base.html for repeat code
-	c. import bootstrap and custom.css for every item post
-	d. update routes based on what we click on navbar
-	e. also created dummy data as 'context'
+	- views.py -> render your html pages based on request
+	- templates-> blog -> <filename>.html we can have base.html for repeat code
+	- import bootstrap and custom.css for every item post
+	- update routes based on what we click on navbar
+	- also created dummy data as 'context'
 9. To create a super user for the Administrator page, run
 ```
 ptyhon manage.py makemigrations
 python manage.py runserver
 python manage.py createsuperuser
 ```
-	a. you can now login, in /admin page
-	b. click users to see your users
-	c. you can edit info, check current users/groups/etc. 
-	d. django doesnt store your actual passwords, it automatically hashes them
+	- you can now login, in /admin page
+	- click users to see your users
+	- you can edit info, check current users/groups/etc. 
+	- django doesnt store your actual passwords, it automatically hashes them
 10. Create models class in your models.py file in your app directory
-	a. run python manage.py makemigrations
-	b. this creates a 0001_intial.py file under migrations sub-directory
-	c. to create this table in your database, run 
+	- run python manage.py makemigrations
+	- this creates a 0001_intial.py file under migrations sub-directory
+	- to create this table in your database, run 
 	```
 	python manage.py sqlmigrate blog 0001
 	python manage.py sqlmigrate <appName> <migrationNumber>
 	``` 
-	d. After you create model class and create your table, run the migrate command 
+	- After you create model class and create your table, run the migrate command 
 	```
 	python manage.py migrate
 	```
-	e. Migrations are so useful bc they allow us to make changes to our databses even after its created and has existing data in the database
-	f. if you wanted to query the database using these models, you can access the shell by running
+	- Migrations are so useful bc they allow us to make changes to our databses even after its created and has existing data in the database
+	- if you wanted to query the database using these models, you can access the shell by running
 	```
 	python manage.py shell
 	```
-	g. example commands in the shell
+	- example commands in the shell
 	```
 	from blog.models import Post
 	from django.contrib.auth.models import User
@@ -145,28 +146,28 @@ python manage.py createsuperuser
 
 11. We have to create user registration, and we do this in a new app
 ```python manage.py startapp users```
-	a. add to installed apps in settings.py file
-	b. add function to views to render register user page
-	c. add templates/users sub directory for html files
-	d. create html file for view function
-	e. update urls.py file 
-	f. go back to views.py file, now if your form as a POST method, 
+	- add to installed apps in settings.py file
+	- add function to views to render register user page
+	- add templates/users sub directory for html files
+	- create html file for view function
+	- update urls.py file 
+	- go back to views.py file, now if your form as a POST method, 
 	your function should take the request and post it to the database.
-	g. based on if the forms valid or not, we will both display success messages for the user and/or redirect them appropriately
-	h. if you want messages to work, climb through your hierarchy and code for the success messages in your base.html template
-	i. now that that works, you can save it to your database by adding form.save() in your register function in views.py
-	j. To customize what fields you want users to register with, create new forms.py file in your users app directory, then import and use the class in made in views.py
-	k. I'm using djangos "crispy-forms" to get a better styling
+	- based on if the forms valid or not, we will both display success messages for the user and/or redirect them appropriately
+	- if you want messages to work, climb through your hierarchy and code for the success messages in your base.html template
+	- now that that works, you can save it to your database by adding form.save() in your register function in views.py
+	- To customize what fields you want users to register with, create new forms.py file in your users app directory, then import and use the class in made in views.py
+	- I'm using djangos "crispy-forms" to get a better styling
 ```pip install django-crispy-forms```
-		- to use cripsy, list it in installed apps, dictacte which css framework youre using (both in settings.py file) then update your register.html file
+	- to use cripsy, list it in installed apps, dictacte which css framework youre using (both in settings.py file) then update your register.html file
 
 12. We now have to create a login and logout system
-	a. update urls.py with auth_views login & logout
-	b. create login logout html files
-	c. create redirect links after form submissions
-	d. you can update your navbar for visual reinforcement of log in and log out actions
-	e. workflow review: views.py in app -> create  function to render page -> update project's urls.py file, create the html in template/appname directory
-	f. you can also restrict certain urls by making it so that we require an authentication/login before we access certain pages (for this you have to import decorators in your views.py file and update the link ur want redirection to in settings.py)
+	- update urls.py with auth_views login & logout
+	- create login logout html files
+	- create redirect links after form submissions
+	- you can update your navbar for visual reinforcement of log in and log out actions
+	- workflow review: views.py in app -> create  function to render page -> update project's urls.py file, create the html in template/appname directory
+	- you can also restrict certain urls by making it so that we require an authentication/login before we access certain pages (for this you have to import decorators in your views.py file and update the link ur want redirection to in settings.py)
 
 ## How my file tree looks now
 ```
