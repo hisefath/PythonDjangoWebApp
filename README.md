@@ -161,7 +161,6 @@ python manage.py createsuperuser
 		- to use cripsy, list it in installed apps, dictacte which css framework youre using (both in settings.py file) then update your register.html file
 
 12. We now have to create a login and logout system
-
 	a. update urls.py with auth_views login & logout
 	b. create login logout html files
 	c. create redirect links after form submissions
@@ -170,6 +169,7 @@ python manage.py createsuperuser
 	f. you can also restrict certain urls by making it so that we require an authentication/login before we access certain pages (for this you have to import decorators in your views.py file and update the link ur want redirection to in settings.py)
 
 ## How my file tree looks now
+```
 .
 ├── README.md
 ├── blog
@@ -214,14 +214,14 @@ python manage.py createsuperuser
     │       └── register.html
     ├── tests.py
     └── views.py
-
+```
 13. Creating user profiles and creating one to one relationship between users and profiles
-	a. create model in models.py file in user app sub directory
-	b. ```pip install Pillow```
-	c. ```python manage.py makemigrations```
-	d. ```python manage.py migrate```
-	e. register profile model in admin.py
-	f. run django shell 
+	- create model in models.py file in user app sub directory
+	- ```pip install Pillow```
+	- ```python manage.py makemigrations```
+	- ```python manage.py migrate```
+	- register profile model in admin.py
+	- run django shell 
 	```
 	python manage.py shell
 	from django.contrib.auth.models import User
@@ -230,11 +230,11 @@ python manage.py createsuperuser
 	user.profile.image
 	user.profile.image.url
 	```
-	g. We have to direct which directory the images will be stored when we upload new pictures for every user, we do this in the settings.py file
-	h. make a signal.py file so anytime we create a user, a profile is generated, and will be able to save the profile information 
-	h. Creating User/profile update forms
-	i. Make sure to update views.py file accordingly to make sure the new forms work as POST requests, and save appropriately. 
-	j. Resize photo on upload by going to models.py file and overwriting save method
-	k. Add profile image next to users post using home.html file
-	
+	- We have to direct which directory the images will be stored when we upload new pictures for every user, we do this in the settings.py file
+	- make a signal.py file so anytime we create a user, a profile is generated, and will be able to save the profile information 
+	- Creating User/profile update forms
+	- Make sure to update views.py file accordingly to make sure the new forms work as POST requests, and save appropriately. 
+	- Resize photo on upload by going to models.py file and overwriting save method
+	- Add profile image next to users post using home.html file
+
 
