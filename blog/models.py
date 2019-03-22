@@ -7,7 +7,6 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=100)
     details = models.TextField()
-    price = models.IntegerField() 
     date_posted = models.DateTimeField(default=timezone.now) # Gets timestamp from users timezone settings
     author = models.ForeignKey(User, on_delete=models.CASCADE) #if user deletes account, cascade deltes all of his posts as well
 

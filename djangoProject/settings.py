@@ -22,7 +22,7 @@ SECRET_KEY = 'c9nd22aoyq2sgbs=-1!^+b3$c&6!1d%p@8&(_$!2(-)(2m=7v#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangotest001.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -117,10 +117,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/' 
+MEDIA_URL = '/med ia/' 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

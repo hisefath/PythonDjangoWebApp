@@ -6,8 +6,8 @@ from PIL import Image
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    gradeLevel = models.CharField(max_length=100) #Freshmen, Sophomore, Junior, Senior
-    major = models.CharField(max_length=100) #ComputerScience, Chemical Engineering, Bio, etc.
+    jobTitle = models.CharField(max_length=100) #software engineer, UI engineer, Tester
+    #yearsAtBank = models.IntegerField() #1, 5, 10
 
 
     def __str__(self):
