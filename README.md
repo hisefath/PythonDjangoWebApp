@@ -69,7 +69,7 @@ python manage.py startapp <appName>
 	- type out path pattern
 	- type out path pattern in web project urls.py file
 	- workflow:: add views for app-> update path patterns for app -> update webapp path patterns
-	
+
 8. Creating Templates in an app directory
 ###### instead of creating html for all views, we create <templates> sub-directory
 ###### inside of templates, new subdirectory in the name of our app (although redundant, makes things clear)
@@ -138,14 +138,15 @@ python manage.py createsuperuser
 	user.post_set.all() 
 	user.post_set.create(title = 'textbook 3', details = 'textbook for sale', price=120) //automatically saves
 	```
-	h. go to app->views.py and replace dummy data with our post model
+	- go to app->views.py and replace dummy data with our post model
 		- from .models import Post 
 		- context -> posts -> Post.objects.all() 
 		- to see the Post datatable in your /admin page, register it to your admin.py file in your app directory
 		- import it again, then do admin.site.register(Post)
 
 11. We have to create user registration, and we do this in a new app
-```python manage.py startapp users```
+
+	```python manage.py startapp users```
 	- add to installed apps in settings.py file
 	- add function to views to render register user page
 	- add templates/users sub directory for html files
