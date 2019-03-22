@@ -73,11 +73,11 @@ python manage.py startapp <appName>
 ###### instead of creating html for all views, we create <templates> sub-directory
 ###### inside of templates, new subdirectory in the name of our app (although redundant, makes things clear)
 ###### <whateverAppName> -> templates -> <whatverAppName> -> template.html
-	008. views.py -> render your html pages based on request
-	108. templates-> blog -> <filename>.html we can have base.html for repeat code
-	208. import bootstrap and custom.css for every item post
-	308. update routes based on what we click on navbar
-	408. also created dummy data as 'context'
+	a. views.py -> render your html pages based on request
+	b. templates-> blog -> <filename>.html we can have base.html for repeat code
+	c. import bootstrap and custom.css for every item post
+	d. update routes based on what we click on navbar
+	e. also created dummy data as 'context'
 9. To create a super user for the Administrator page, run
 ```
 ptyhon manage.py makemigrations
@@ -144,9 +144,7 @@ python manage.py createsuperuser
 		- import it again, then do admin.site.register(Post)
 
 11. We have to create user registration, and we do this in a new app
-```
-python manage.py startapp users
-```
+```python manage.py startapp users```
 	a. add to installed apps in settings.py file
 	b. add function to views to render register user page
 	c. add templates/users sub directory for html files
@@ -159,11 +157,11 @@ python manage.py startapp users
 	i. now that that works, you can save it to your database by adding form.save() in your register function in views.py
 	j. To customize what fields you want users to register with, create new forms.py file in your users app directory, then import and use the class in made in views.py
 	k. I'm using djangos "crispy-forms" to get a better styling
-	```
-	pip install django-crispy-forms
-	```
+```pip install django-crispy-forms```
 		- to use cripsy, list it in installed apps, dictacte which css framework youre using (both in settings.py file) then update your register.html file
+
 12. We now have to create a login and logout system
+
 	a. update urls.py with auth_views login & logout
 	b. create login logout html files
 	c. create redirect links after form submissions
@@ -218,13 +216,21 @@ python manage.py startapp users
     └── views.py
 
 13. Creating user profiles and creating one to one relationship between users and profiles
-	a. create model in models.py fiel in user app sub directory
+	a. create model in models.py file in user app sub directory
 	b. ```pip install Pillow```
 	c. ```python manage.py makemigrations```
 	d. ```python manage.py migrate```
 	e. register profile model in admin.py
 	f. run django shell 
-	```python manage.py shell```
-	g.  
+	```
+	python manage.py shell
+	from django.contrib.auth.models import User
+	user = User.objects.filter(username="mastershefu")
+	user.profile
+	user.profile.image
+	user.profile.image.url
+	```
+	g. We have to direct which directory the images will be stored when we upload new pictures for every user, we do this in the settings.py file
+	h. make a signal.py file so anytime we create a user, a profile is generated, and will be able to save the profile information 
 
 
