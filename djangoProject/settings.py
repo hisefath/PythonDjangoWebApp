@@ -22,7 +22,7 @@ SECRET_KEY = 'c9nd22aoyq2sgbs=-1!^+b3$c&6!1d%p@8&(_$!2(-)(2m=7v#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangotest001.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['mtbpoc.herokuapp.com/', '127.0.0.1']
 
 
 # Application definition
