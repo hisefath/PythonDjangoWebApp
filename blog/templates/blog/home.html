@@ -7,7 +7,7 @@
             <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
         </div>
         <h2>
-            <a class="article-title alignleft" href="#">{{ post.title }}</a>
+            <a class="article-title alignleft" href="{% url 'post-detail' post.id %}">{{ post.title }}</a>
             <a class="alignright">${{ post.price }}</a>
             <div style="clear: both;"></div>
         </h2>

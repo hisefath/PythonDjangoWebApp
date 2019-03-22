@@ -239,4 +239,11 @@ python manage.py createsuperuser
 	- Resize photo on upload by going to models.py file and overwriting save method
 	- Add profile image next to users post using home.html file
 
+14. Implementing CRUD for Blog Posts
+	- in our blog app directory, make a class based view for PostListView
+	- update urls in blog dir
+	- Do same for detail view to view indivisual posts
+	- Now implement CRUD by using create, update, and delete views from djano documentation
+	
+
 
